@@ -3,6 +3,7 @@
 #include "Game.h"
 #include<vector>
 #include "Definitions.h"
+#include "Coin.h"
 
 	class Brick {
 	public:
@@ -10,7 +11,8 @@
 		void CreateBricks();
 		void DrawBricks();
 		void MoveBrick(float dt);
-		void RandomiseYBrickCoordinate();
+		int RandomiseYBrickCoordinate();
+		const std::vector<sf::Sprite>& getSprites() const;
 	private:
 		GameDataRef _data;
 		std::vector<sf::Sprite> brickSprites;

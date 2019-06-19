@@ -14,9 +14,10 @@
 #define BEE_1_FILEPATH "Pictures/bee.png"
 #define BEE_2_FILEPATH "Pictures/bee_01.png"
 #define BEE_3_FILEPATH "Pictures/bee_02.png"
-#define BRICK_MOVEMENT_SPEED 250.0f
+#define BRICK_MOVEMENT_SPEED 350.0f
 #define BRICK_CREATION_FREQUENCY 0.8f
+#define FLOWER_CREATION_FREQUENCY 0.4f
 #define BORDER_FILEPATH "Pictures/border.png"
 #define BEE_ANIMATION_DURATION 0.5f
-
+#define FLOWER_FILEPATH "Pictures/flower.png"
 enum GameStates {Before, Playing, GameOver};

@@ -33,11 +33,11 @@ void Bee::Animate(float dt)
 
 void Bee::Fly()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && this->top() > 0) //T
 	{
 		_beeSprite.move(0, -2);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && this->bottom() < 490) //tutaj trzeba aktualizowaæ wysokoœæ ekranu T
 	{
 		_beeSprite.move(0, 2);
 	}
@@ -46,4 +46,20 @@ void Bee::Fly()
 const sf::Sprite &Bee::getSprite() const
 {
 	return _beeSprite;
+}
+
+int Bee::getPosition()
+{
+	return _beeSprite.getPosition().y;
+}
+
+//T
+float Bee::top()
+{
+	return this->_beeSprite.getPosition().y - _beeSprite.getTextureRect().height / 2.f;
+}
+
+float Bee::bottom()
+{
+	return this->_beeSprite.getPosition().y + _beeSprite.getTextureRect().height / 2.f;
 }

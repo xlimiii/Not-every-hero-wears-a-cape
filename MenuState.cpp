@@ -35,7 +35,6 @@
 			}
 		}
 	}
-	void MenuState::Update(float dt){}
 	
 	void MenuState::Draw(float dt) 
 	{

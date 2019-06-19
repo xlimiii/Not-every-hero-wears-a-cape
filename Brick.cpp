@@ -30,7 +30,16 @@
 			_data->window.draw(brickSprites.at(i));
 		}
 	}
-	void Brick::RandomiseYBrickCoordinate() 
+	int Brick::RandomiseYBrickCoordinate() 
 	{
 		_brickYCoordinate = (rand() % (_data->window.getSize().y - _borderHeight - _brickHeight) + _borderHeight);
+		return _brickYCoordinate;
+
+	}
+
+	
+	const std::vector<sf::Sprite>& Brick::getSprites() const
+	{
+		return brickSprites;
+
 	}

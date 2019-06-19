@@ -6,6 +6,8 @@
 #include "Brick.h"
 #include "Border.h"
 #include "Bee.h"
+#include "Coin.h"
+#include "Collision.h"
 	class GameState :public State {
 	public:
 		GameState(GameDataRef data);
@@ -18,8 +20,11 @@
 		sf::Clock _clock;
 		sf::Sprite _background;
 		Brick* brick;
+		Flower* flower;
 		Border* border;
 		Bee* bee;
+		Collision collision;
 		sf::Clock clock;
-		int _score;
+		int _gameState;
+		int _score=0;
 	};

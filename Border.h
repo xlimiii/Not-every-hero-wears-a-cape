@@ -6,7 +6,6 @@
 	public:
 		Border(GameDataRef data);
 		void DrawBorder();
-		
 		const std::vector < sf::Sprite > &getSprites() const;
 	private:
 		GameDataRef _data;

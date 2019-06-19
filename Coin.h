@@ -2,11 +2,20 @@
 #include <SFML/Graphics.hpp>
 #include "Definitions.h"
 #include "Game.h"
-class Coin {
+#include "Brick.h"
+class Flower {
 public:
-	Coin(GameDataRef data);
-	void DrawCoin();
+	Flower(GameDataRef data);
+	void CreateFlower();
+	void DrawFlower();
+	void MoveFlower(float dt);
+	int RandomiseYFlowerCoordinate();
+	bool DoIntersect(int, int);
+	const std::vector<sf::Sprite>& getSprites() const;
 private:
 	GameDataRef _data;
-	sf::Sprite _coinSprite;
+	std::vector<sf::Sprite> flowerSprites;
+	int _borderHeight;
+	int _flowerHeight;
+	int _flowerYCoordinate;
 };
