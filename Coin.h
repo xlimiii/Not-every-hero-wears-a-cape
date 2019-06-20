@@ -3,7 +3,7 @@
 #include "Definitions.h"
 #include "Game.h"
 #include "Brick.h"
-class Flower {
+class Flower{
 public:
 	Flower(GameDataRef data);
 	void CreateFlower();
@@ -11,7 +11,7 @@ public:
 	void MoveFlower(float dt);
 	int RandomiseYFlowerCoordinate();
 	bool DoIntersect(int, int);
-	const std::vector<sf::Sprite>& getSprites() const;
+	std::vector<sf::Sprite>& getSprites();
 private:
 	GameDataRef _data;
 	std::vector<sf::Sprite> flowerSprites;

@@ -44,7 +44,7 @@ bool Flower::DoIntersect(int y1, int y2)
 
 }
 
-const std::vector<sf::Sprite>& Flower::getSprites() const
+ std::vector<sf::Sprite>& Flower::getSprites() 
 {
 	return flowerSprites;
 

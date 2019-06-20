@@ -2,6 +2,7 @@
 #include <sstream>
 #include "Definitions.h"
 #include "GameState.h"
+#include "GameOverState.h"
 #include <iostream>
 
 	GameState::GameState(GameDataRef data) : _data(data) {}
@@ -36,7 +37,7 @@
 		}
 	}
 
-	void GameState::Update(float dt) 
+	void GameState::Update(float dt)
 	{
 		flower->MoveFlower(dt);
 		brick->MoveBrick(dt);
@@ -46,21 +47,36 @@
 		{
 			a = brick->RandomiseYBrickCoordinate();
 			//TWORZENIE KWIATÓW NIEPOKRYWAJ¥CYCH SIÊ Z CEG£AMI 
-			do 
+			do
 			{
 				b = flower->RandomiseYFlowerCoordinate();
 			} while (!flower->DoIntersect(a, b));
 			flower->CreateFlower();
+			const std::vector<sf::Sprite> FLOWER = flower->getSprites();
 			brick->CreateBricks();
 			clock.restart();
 		}
 		bee->Animate(dt);
-		bee->Fly(); 
-		//PONIZEJ PRÓBNE ZBIERANIE KWIATKÓW ALE NIE DZIA£A ZA BARDZO HAHAHA 
-		if (!flower->DoIntersect(b, c)) {
-			_score++;
+		bee->Fly();
+		std::vector<sf::Sprite> FLOWER = flower->getSprites();
+		for (int i = 0; i < FLOWER.size(); i++) {
+			bool deleteSprite = false;
+			//PUNKTY W MIARE DZIALAJA(NABIJA SIE 22, ALE TO DLATEGO, ¯E NIE DZIALA ZNIKANIE JESZCZE I PSZCZO£A PRZEZ D£UGI CZAS JEST W KONTAKCIE Z KWIATKIEM)
+			if (collision.isCollision(bee->getSprite(), FLOWER.at(i)))
+			{
+				_score++;
+				std::cout << "PUNKTY - " << _score << std::endl;
+			}
 		}
-		std::cout << "SCORE = " << _score;
+		std::vector<sf::Sprite> BRICK = brick->getSprites();
+		for (int i = 0; i < BRICK.size(); i++)
+		{
+			//koniec gry przy zderzeniu z ceg³¹. Dzia³a, ale chcê poprawiæ ekran GAMEOVER
+			if (collision.isCollision(bee->getSprite(), BRICK.at(i)))
+			{	
+				_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+			}
+		}
 	}
 
 	void GameState::Draw(float dt)

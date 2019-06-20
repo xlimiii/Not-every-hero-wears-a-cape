@@ -15,6 +15,7 @@
 #define BEE_2_FILEPATH "Pictures/bee_01.png"
 #define BEE_3_FILEPATH "Pictures/bee_02.png"
 #define BRICK_MOVEMENT_SPEED 350.0f
+#define ZERO_SPEED 0.0f
 #define BRICK_CREATION_FREQUENCY 0.8f
 #define FLOWER_CREATION_FREQUENCY 0.4f
 #define BORDER_FILEPATH "Pictures/border.png"
