@@ -10,7 +10,6 @@ public:
 	GameOverState(GameDataRef data, int score);
 	void Init();
 	void HandleInput();
-	void Update(float dt);
 	void Draw(float dt);
 private:
 	GameDataRef _data;

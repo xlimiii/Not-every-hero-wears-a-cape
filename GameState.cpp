@@ -2,12 +2,12 @@
 #include "Definitions.h"
 #include "GameState.h"
 #include "GameOverState.h"
-#include <iostream>
+#include "windows.h"
+#include <SFML/Audio.hpp>
 
 GameState::GameState(GameDataRef data) : _data(data) {}
 
 void GameState::Init() {
-	std::cout << "Game State\n";
 	_data->pictures.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
 	_data->pictures.LoadTexture("Brick", BRICK_FILEPATH);
 	_data->pictures.LoadTexture("Border", BORDER_FILEPATH);
@@ -16,20 +16,22 @@ void GameState::Init() {
 	_data->pictures.LoadTexture("Bee 2", BEE_2_FILEPATH);
 	_data->pictures.LoadTexture("Bee 3", BEE_3_FILEPATH);
 
+	PlaySound(TEXT("avengers.wav"), NULL, SND_ASYNC | SND_FILENAME);
 
 	brick = new Brick(_data);
-	flower = new Flower(_data);
+	flowers.push_back(new Flower(_data));
+	flowers[flowers.size() - 1]->CreateFlower();
 	border = new Border(_data);
 	bee = new Bee(_data);
 	hud = new Hud(_data);
 	_background.setTexture(this->_data->pictures.GetTexture("Game Background"));
-
 	_score = 0;
 	hud->UpddateScore(_score);
 }
 
 void GameState::HandleInput()
 {
+	
 	sf::Event event;
 	while (_data->window.pollEvent(event))
 	{
@@ -42,62 +44,48 @@ void GameState::HandleInput()
 
 void GameState::Update(float dt)
 {
-	flower->MoveFlower(dt);
+	FLOWER.erase(FLOWER.begin(), FLOWER.end());
+for(int i =0;i<flowers.size();i++)
+	flowers[i]->MoveFlower(dt);
 	brick->MoveBrick(dt);
 	int a = 0; int b = 0; int c = 0;;
 	c = bee->getPosition();
 	if (clock.getElapsedTime().asSeconds() > BRICK_CREATION_FREQUENCY)
 	{
 		a = brick->RandomiseYBrickCoordinate();
-		//TWORZENIE KWIATÓW NIEPOKRYWAJ¥CYCH SIÊ Z CEG£AMI 
+		//TWORZENIE KWIATÓW NIEPOKRYWAJĄCYCH SIĘ Z CEGŁAMI
+		flowers.push_back(new Flower(_data));
 		do
 		{
-			b = flower->RandomiseYFlowerCoordinate();
-		} while (!flower->DoIntersect(a, b));
-		flower->CreateFlower();
+			b = flowers[flowers.size()-1]->RandomiseYFlowerCoordinate();
+		} while (!flowers[flowers.size() - 1]->DoIntersect(a, b));
+		flowers[flowers.size() -1] ->CreateFlower();
 		brick->CreateBricks();
 		clock.restart();
 	}
 	bee->Animate(dt);
 	bee->Fly();
-	std::vector<sf::Sprite> FLOWER = flower->getSprites();
-	std::vector<Flower> flowers;
+	for (int i =0 ; i < flowers.size(); i++) {
 
-	for (int i = 0; i < FLOWER.size(); i++)
-	{
-		bool deleteSprite = false;
-
-		//PUNKTY W MIARE DZIALAJA(NABIJA SIE 22, ALE TO DLATEGO, ¯E NIE DZIALA ZNIKANIE JESZCZE I PSZCZO£A PRZEZ D£UGI CZAS JEST W KONTAKCIE Z KWIATKIEM)
+		FLOWER.push_back(flowers[i]->getSprite());
 		if (collision.isCollision(bee->getSprite(), FLOWER.at(i)))
 		{
+			flowers.erase(flowers.begin()+ i );
 			_score++;
-			
-			std::cout << "PUNKTY - " << _score << std::endl;
-
 			hud->UpddateScore(_score);
-
-			std::vector<Flower*> flowerVec;
-			flowerVec.push_back(flower);
-
-
-			for (int i = 0; i < flowerVec.size(); i++)
-			{
-				flowerVec[i]->setPos({ 422245, 422245 });
-
-			}
-
-
 		}
 	}
+	
+
 	std::vector<sf::Sprite> BRICK = brick->getSprites();
 	for (int i = 0; i < BRICK.size(); i++)
 	{
-		//koniec gry przy zderzeniu z ceg³¹. Dzia³a, ale chcê poprawiæ ekran GAMEOVER
+		//koniec gry przy zderzeniu z cegłą
 		if (collision.isCollision(bee->getSprite(), BRICK.at(i)))
 		{
-			std::cout << "WYNIK W GAMESTATE TO: " << _score;
 			sf::sleep(sf::seconds(0.3));
 			
+			PlaySound(TEXT("silent.wav"), NULL, SND_ASYNC | SND_FILENAME);
 			_data->machine.AddState(StateRef(new GameOverState(_data, _score)), true);
 		}
 	}
@@ -108,7 +96,8 @@ void GameState::Draw(float dt)
 	_data->window.clear();
 	_data->window.draw(_background);
 	brick->DrawBricks();
-	flower->DrawFlower();
+	for(int i=0;i<flowers.size();i++)
+	flowers[i]->DrawFlower();
 	border->DrawBorder();
 	bee->DrawBee();
 
@@ -117,5 +106,3 @@ void GameState::Draw(float dt)
 	_data->window.display();
 
 }
-
-//int FINAL_SCORE = _score;

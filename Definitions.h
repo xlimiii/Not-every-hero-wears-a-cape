@@ -14,11 +14,17 @@
 #define BEE_1_FILEPATH "Pictures/bee.png"
 #define BEE_2_FILEPATH "Pictures/bee_01.png"
 #define BEE_3_FILEPATH "Pictures/bee_02.png"
-#define BRICK_MOVEMENT_SPEED 280.0f
-#define BRICK_CREATION_FREQUENCY 2.0f
+#define BRICK_MOVEMENT_SPEED 300.0f
+#define BRICK_CREATION_FREQUENCY 0.8f
 #define BORDER_FILEPATH "Pictures/border.png"
 #define BEE_ANIMATION_DURATION 0.5f
 #define FLOWER_FILEPATH "Pictures/flower.png"
 #define SCORE_FONT "Pictures/arial.ttf"
-#define PROTECTING_BEES_FILEPATH "Pictures/learning.png"
-
+#define PROTECTING_BEES_FILEPATH "Pictures/find.png"
+#define EDUCATIONAL_NOTE_FILEPATH "Pictures/note.png"
+#define PLAY_AGAIN_BUTTON_FILEPATH "Pictures/play_again.png"
+#define FIND_OUT_FILEPATH "Pictures/findout.png"
+#define HERE_FILEPATH "Pictures/here.png"
+#define RULES_FILEPATH "Pictures/rules.png"
+#define RETURN_BUTTON_FILEPATH "Pictures/returnbutton.png"
+#define BEE_TURN_FILEPATH "Pictures/bee_turn.png"

@@ -124,7 +124,7 @@
   <ItemGroup>
     <ClCompile Include="BeeState.cpp" />
     <ClCompile Include="Final.cpp" />
-    <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="Flower.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Hud.cpp" />
     <ClCompile Include="Pictures.cpp" />
@@ -137,13 +137,14 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MenuState.cpp" />
+    <ClCompile Include="RulesState.cpp" />
     <ClCompile Include="WelcomeState.cpp" />
     <ClCompile Include="StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BeeState.h" />
     <ClInclude Include="Final.h" />
-    <ClInclude Include="Coin.h" />
+    <ClInclude Include="Flower.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Hud.h" />
     <ClInclude Include="Pictures.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="MenuState.h" />
+    <ClInclude Include="RulesState.h" />
     <ClInclude Include="WelcomeState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
