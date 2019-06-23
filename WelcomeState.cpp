@@ -1,4 +1,3 @@
-
 #include <sstream>
 #include "WelcomeState.h"
 #include "Definitions.h"
@@ -6,11 +5,13 @@
 #include <iostream>
 
 	WelcomeState::WelcomeState(GameDataRef data) : _data(data) {}
+	
 	void WelcomeState::Init() 
 	{
 		_data->pictures.LoadTexture("Welcome State Background", WELCOME_BACKGROUND_FILEPATH);
 		_background.setTexture(this->_data->pictures.GetTexture("Welcome State Background"));
 	}
+
 	void WelcomeState::HandleInput() 
 	{
 		sf::Event event;
@@ -22,6 +23,7 @@
 			}
 		}
 	}
+
 	void WelcomeState::Update(float dt) 
 	{
 		//Po up³ywie czasu ustawionego w WELCOME_STATE_SHOW_TIME, program zmienia stan, przechodzi do stanu menu g³ównego
@@ -30,7 +32,9 @@
 			_data->machine.AddState(StateRef(new MenuState(_data)), true);
 		}
 	}
-	void WelcomeState::Draw(float dt) {
+
+	void WelcomeState::Draw(float dt) 
+	{
 		_data->window.clear();
 		_data->window.draw(_background);
 		_data->window.display();

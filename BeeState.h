@@ -3,6 +3,8 @@
 #include "State.h"
 #include "Game.h"
 
+//Klasa odpowiadaj¹ca za stan maszyny, gdzie pojawia siê notka o pszczo³ach.
+
 class BeeState : public State
 {
 public:

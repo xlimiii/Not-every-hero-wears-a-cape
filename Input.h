@@ -1,6 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-	class Input {
+
+//Klasa odpowiadaj¹ca za dane wprowadzane przez u¿ytkownika.
+
+	class Input 
+	{
 	public:
 		Input(){}
 		~Input() {}

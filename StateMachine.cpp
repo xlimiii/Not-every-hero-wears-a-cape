@@ -1,11 +1,13 @@
 #include "StateMachine.h"
-
+    
+    //Funkcja odpowiadaj¹ca za przejœcia miêdzy stanami maszyny
 	void StateMachine::AddState(StateRef newState, bool isReplacing)
 	{
 		this->_isAdding = true;
 		this->_isReplacing = isReplacing;
 		this->_newState = std::move(newState);
 	}
+
 	void StateMachine::RemoveState() 
 	{
 		this->_isRemoving = true;
@@ -40,6 +42,7 @@
 			this->_isAdding = false;
 		}
 	}
+
 	StateRef &StateMachine::GetActiveState() 
 	{
 		return this->_states.top();

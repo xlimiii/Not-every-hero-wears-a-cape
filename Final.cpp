@@ -1,7 +1,8 @@
 #include "Final.h"
 #include <string>
 
-Final::Final(GameDataRef data) : _data(data) {
+Final::Final(GameDataRef data) : _data(data) 
+{
 	font.loadFromFile(SCORE_FONT);
 	_scoreText.setFont(font);
 	_scoreText.setString("0");
@@ -12,11 +13,15 @@ Final::Final(GameDataRef data) : _data(data) {
 	_scoreText.setPosition(_data->window.getSize().x / 1.5, _data->window.getSize().y / 2);
 }
 
+//Wyœwietlenie w konsoli wyniku
 void Final::Draw()
 {
 	_data->window.draw(_scoreText);
 	_data->window.draw(_wordScore);
 }
-void Final::UpddateScore(int score) {
+
+//Aktualizowanie wyniku
+void Final::UpddateScore(int score) 
+{
 	_scoreText.setString(std::to_string(score));
 }

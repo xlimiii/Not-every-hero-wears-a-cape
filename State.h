@@ -1,5 +1,9 @@
 #pragma once
-class State {
+
+//Klasa odpowiadaj¹ca za ró¿ne stany maszyny.
+
+class State 
+{
 public:
 	virtual void Init() {};
 		virtual void HandleInput() {};

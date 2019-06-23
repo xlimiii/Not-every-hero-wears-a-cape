@@ -1,7 +1,8 @@
 #include "Hud.h"
 #include <string>
 
-Hud::Hud(GameDataRef data) : _data(data) {
+Hud::Hud(GameDataRef data) : _data(data) 
+{
 	font.loadFromFile(SCORE_FONT);
 	_scoreText.setFont(font);
 	_scoreText.setString("0");
@@ -18,11 +19,15 @@ Hud::Hud(GameDataRef data) : _data(data) {
 	_wordScore.setPosition(_data->window.getSize().x / 1.2, _data->window.getSize().y / 13);
 }
 
+//Wyœwietlanie wyniku w konsoli
 void Hud::Draw()
 {
 	_data->window.draw(_scoreText);
 	_data->window.draw(_wordScore);
 }
-void Hud::UpddateScore(int score) {
+
+//Aktualizowanie wyniku
+void Hud::UpddateScore(int score) 
+{
 	_scoreText.setString(std::to_string(score));
 }

@@ -1,10 +1,11 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
 #include "State.h"
 #include "Game.h"
 
-class MenuState :public State
+//Klasa odpowiadaj¹ca za stan maszyny, gdy wyœwietla siê Menu.
+
+class MenuState : public State
 {
 public:
 	MenuState(GameDataRef data);

@@ -2,6 +2,7 @@
 #include "WelcomeState.h"
 #include <stdlib.h>
 #include <time.h>
+
 	Game::Game(int width, int height, std::string title) 
 	{
 		srand(time(NULL));

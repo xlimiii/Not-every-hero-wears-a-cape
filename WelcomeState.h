@@ -1,10 +1,12 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
 #include "State.h"
 #include "Game.h"
 
-	class WelcomeState :public State {
+//Klasa odpowiadaj¹ca za stan maszyny, gdy wyœwietlaj¹ siê twórcy gry.
+
+	class WelcomeState :public State 
+	{
 	public:
 		WelcomeState(GameDataRef data);
 		void Init();

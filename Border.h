@@ -2,7 +2,11 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 #include <vector>
-	class Border {
+
+//Klasa odpowiadaj¹ca za granice ekranu.
+
+	class Border 
+	{
 	public:
 		Border(GameDataRef data);
 		void DrawBorder();

@@ -10,11 +10,13 @@ Bee::Bee(GameDataRef data) : _data(data)
 	_beeSprite.setPosition((_data->window.getSize().x / 4) - (_beeSprite.getGlobalBounds().width / 2), (_data->window.getSize().y / 2) - (_beeSprite.getGlobalBounds().height / 2));
 }
 
+//Rysowanie w konsoli
 void Bee::DrawBee()
 {
 	_data->window.draw(_beeSprite);
 }
 
+//Animacja pszczo³y
 void Bee::Animate(float dt) 
 {
 	if (_clock.getElapsedTime().asSeconds() > BEE_ANIMATION_DURATION / _animationFrames.size()) 
@@ -32,13 +34,14 @@ void Bee::Animate(float dt)
 	}
 }
 
+//Poruszanie siê pszczo³y
 void Bee::Fly()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && this->top() > 0) //T
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && this->top() > 0)
 	{
 		_beeSprite.move(0, -3);
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && this->bottom() < 490) //tutaj trzeba aktualizowaæ wysokoœæ ekranu T
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && this->bottom() < 490)
 	{
 		_beeSprite.move(0, 3);
 	}
@@ -54,7 +57,7 @@ int Bee::getPosition()
 	return _beeSprite.getPosition().y;
 }
 
-//T
+//Funkcje potrzebne do wprowadzenia granic ruchu pszczo³y
 float Bee::top()
 {
 	return this->_beeSprite.getPosition().y - _beeSprite.getTextureRect().height / 2.f;

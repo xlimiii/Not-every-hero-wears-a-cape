@@ -20,6 +20,7 @@ void BeeState::Init()
 	_beeNormal.setPosition((SCREEN_WIDTH / 2) - (_beeNormal.getGlobalBounds().width / 0.3), ((SCREEN_HEIGHT / 2) + (_beeNormal.getGlobalBounds().height / 0.35)));
 	_beeTurn.setPosition((SCREEN_WIDTH / 2) + (_beeTurn.getGlobalBounds().width / 0.425), ((SCREEN_HEIGHT / 2) + (_beeTurn.getGlobalBounds().height / 0.35)));
 }
+
 void BeeState::HandleInput()
 {
 	sf::Event event;
@@ -29,13 +30,15 @@ void BeeState::HandleInput()
 		{
 			_data->window.close();
 		}
+
+		//Przejœcie do stanu gry Menu
 		if (_data->input.IsSpriteClicked(_playAgainButton, sf::Mouse::Left, _data->window))
-			//po nacisnieciu na przycisk PLAY AGAIN, program zmienia stan, przechodzi do gry
 		{
 			_data->machine.AddState(StateRef(new MenuState(_data)), true);
 		}
 	}
 }
+
 void BeeState::Draw(float dt)
 {
 	_data->window.clear();

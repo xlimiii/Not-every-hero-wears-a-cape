@@ -22,8 +22,9 @@ void RulesState::HandleInput()
 		{
 			_data->window.close();
 		}
+
+		//Przejœcie do stanu maszyny z Menu
 		if (_data->input.IsSpriteClicked(_returnButton, sf::Mouse::Left, _data->window))
-			//po nacisnieciu na przycisk RETURN, program zmienia stan, przechodzi do gry
 		{
 			_data->machine.AddState(StateRef(new MenuState(_data)), true);
 		}

@@ -1,15 +1,17 @@
 #pragma once
 #include<map>
 #include <SFML/Graphics.hpp>
-	class Pictures {
+
+//Klasa odpowiadaj¹ca za obrazki.
+
+	class Pictures 
+	{
 	public:
 		Pictures() {}
 		~Pictures() {}
 		void LoadTexture(std::string name, std::string fileName);
 		sf::Texture &GetTexture(std::string name);
-		//void LoadFont(std::string name, std::string fileName);
-	//	sf::Font &GetFont(std::string name);
+		
 	private:
 		std::map<std::string, sf::Texture> _textures;
-	//	std::map<std::string, sf::Font> _fonts;
 	};

@@ -3,16 +3,21 @@
 #include "Definitions.h"
 #include "Game.h"
 #include <vector>
-	class Bee {
+
+//Klasa odpowiadaj¹ca za funkcje pszczo³y.
+
+	class Bee 
+	{
 	public:
 		Bee(GameDataRef data); //konstruktor
-   		void DrawBee();  //
+   		void DrawBee();
 		void Animate(float dt);
 		void Fly();
 		const sf::Sprite &getSprite() const;
 		int getPosition();
-		float top(); //T
-		float bottom(); //T
+		float top();
+		float bottom();
+
 	private:
 		GameDataRef _data;
 		sf::Sprite _beeSprite;

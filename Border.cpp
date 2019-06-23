@@ -9,12 +9,14 @@
 		_borderSprite1.setPosition(0, _data->window.getSize().y - _borderSprite1.getGlobalBounds().height);
 		_borderSprite2.setPosition(0, 0);
 	}
+
 	void Border::DrawBorder() 
 	{
 			_data->window.draw(_borderSprite1);
 			_data->window.draw(_borderSprite2);
 	}
 
+	//Dodanie Sprite'ów do tablicy dynamicznej
 	const std::vector<sf::Sprite>& Border::getSprites() const
 	{
 		std::vector<sf::Sprite> _borderSprites;

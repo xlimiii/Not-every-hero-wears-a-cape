@@ -4,7 +4,10 @@
 #include "Game.h"
 #include "Brick.h"
 
-class Flower {
+//Klasa odpowiadaj¹ca za funkcje kwiatków.
+
+class Flower 
+{
 public:
 	Flower(GameDataRef data);
 	void CreateFlower();

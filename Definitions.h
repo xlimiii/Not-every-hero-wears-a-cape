@@ -1,4 +1,5 @@
 #pragma once
+//Sta³e definicje wykorzystywane w projekcie.
 
 #define SCREEN_WIDTH 720
 #define SCREEN_HEIGHT 540

@@ -8,10 +8,12 @@
 #include "Bee.h"
 #include "Flower.h"
 #include "Collision.h"
-
 #include "Hud.h"
 
-class GameState :public State {
+//Klasa odpowiadaj¹ca za stan maszyny z g³ówn¹ czêœci¹ gry.
+
+class GameState :public State 
+{
 public:
 	GameState(GameDataRef data);
 	void Init();

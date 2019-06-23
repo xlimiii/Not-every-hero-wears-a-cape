@@ -5,7 +5,10 @@
 #include "Pictures.h"
 #include "Input.h"
 
-	struct GameData {
+//Klasa odpowiadaj¹ca za ogólne dzia³anie gry.
+
+	struct GameData 
+	{
 		StateMachine machine;
 		sf::RenderWindow window;
 		Pictures pictures;
@@ -14,7 +17,8 @@
 
 	typedef std::shared_ptr<GameData> GameDataRef;
 	
-	class Game {
+	class Game 
+	{
 	public:
 		Game(int width, int height, std::string title);
 	private:

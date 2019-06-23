@@ -2,6 +2,9 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 #include "Definitions.h"
+
+//Klasa odpowiadaj¹ca za wyœwietlaj¹cy siê wynik w "GameOverState".
+
 class Final
 {
 public:

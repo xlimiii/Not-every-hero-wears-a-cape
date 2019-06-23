@@ -36,11 +36,14 @@
 			{
 				_data->window.close();
 			}
+
+			//Przejście do głównej części gry
 			if (_data->input.IsSpriteClicked(_playButton, sf::Mouse::Left, _data->window))
-				//po naciœniêciu na przycisk PLAY, program zmienia stan, przechodzi do gry
 			{
 				_data->machine.AddState(StateRef(new GameState(_data)), true);
 			}
+
+			//Przejście do zasad gry
 			if (_data->input.IsSpriteClicked(_hereButton, sf::Mouse::Left, _data->window))
 			{
 				_data->machine.AddState(StateRef(new RulesState(_data)), true);

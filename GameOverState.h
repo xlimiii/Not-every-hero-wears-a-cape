@@ -5,7 +5,11 @@
 #include "Game.h"
 #include "Final.h"
 #include "GameState.h"
-class GameOverState :public State {
+
+//Klasa odpowiadaj¹ca za stan maszyny, kiedy gracz przegra.
+
+class GameOverState :public State 
+{
 public:
 	GameOverState(GameDataRef data, int score);
 	void Init();

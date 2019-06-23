@@ -3,6 +3,8 @@
 #include "Game.h"
 #include <SFML/Graphics.hpp>
 
+//Klasa odpowiadaj¹ca za stan maszyny, gdy wyœwietlaj¹ siê zasady.
+
 class RulesState : public State
 {
 public:

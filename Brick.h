@@ -5,7 +5,10 @@
 #include "Definitions.h"
 #include "Flower.h"
 
-	class Brick {
+//Klasa odpowiadaj¹ca za funkcje cegie³.
+
+	class Brick 
+	{
 	public:
 		Brick(GameDataRef data);
 		void CreateBricks();

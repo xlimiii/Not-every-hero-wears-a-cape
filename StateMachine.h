@@ -2,8 +2,13 @@
 #include <memory>
 #include <stack>
 #include"State.h"
+
+//Klasa odpowiadaj¹ca za operacje na stanach maszyny.
+
 	typedef std::unique_ptr<State> StateRef;
-	class StateMachine {
+
+	class StateMachine 
+	{
 	public:
 		StateMachine() {}
 		~StateMachine() {}

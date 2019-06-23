@@ -1,5 +1,6 @@
 #include "Brick.h"
 #include "Border.h"
+
 	Brick::Brick(GameDataRef data) : _data(data) 
 	{
 		_borderHeight = _data->pictures.GetTexture("Border").getSize().y;
@@ -7,6 +8,7 @@
 		_brickYCoordinate = 0;
 	}
 
+	//Powstawanie cegie³ek
 	void Brick::CreateBricks() 
 	{
 		sf::Sprite sprite(_data->pictures.GetTexture("Brick"));
@@ -14,6 +16,7 @@
 		brickSprites.push_back(sprite);
 	}
 
+	//Poruszanie siê cegie³ek
 	void Brick::MoveBrick(float dt) 
 	{
 		for (int i = 0; i < brickSprites.size(); i++)
@@ -23,6 +26,7 @@
 			brickSprites.at(i).move(-motion, 0);
 		}
 	}
+
 	void Brick::DrawBricks()
 	{
 		for (int i = 0; i < brickSprites.size(); i++)
@@ -30,6 +34,8 @@
 			_data->window.draw(brickSprites.at(i));
 		}
 	}
+
+	//Losowe wybranie gdzie pojawi siê cegie³ka
 	int Brick::RandomiseYBrickCoordinate() 
 	{
 		_brickYCoordinate = (rand() % (_data->window.getSize().y - _borderHeight - _brickHeight) + _borderHeight);
