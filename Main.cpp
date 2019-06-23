@@ -1,17 +1,17 @@
-/*1. Dodaæ monety :
-- warunek, ¿eby nie powstawa³y w tym samym miejscu, co ceg³y
+ï»¿/*1. DodaÄ‡ monety :
+- warunek, Å¼eby nie powstawaÅ‚y w tym samym miejscu, co cegÅ‚y
 - licznik monet
-- znikanie monet po zebraniu 
-2. Ruch pszczó³ki :
-- dodaæ granice ruchu 
-3. Obs³uga koñca gry
-- przy zderzeniu z ceg³¹ 
-- po zebraniu jakiejœ iloœci monet / up³yniêciu czasu
+- znikanie monet po zebraniu
+
+3. ObsÅ‚uga koÅ„ca gry
+- przy zderzeniu z cegÅ‚Ä…
+- po zebraniu jakiejÅ› iloÅ›ci monet / upÅ‚yniÄ™ciu czasu
 */
+
 #include"Game.h"
 #include "Definitions.h"
 
 int main()
 {
-	Game(SCREEN_WIDTH,SCREEN_HEIGHT,"Not every hero wears a cape");
+	Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Not every hero wears a cape");
 }
