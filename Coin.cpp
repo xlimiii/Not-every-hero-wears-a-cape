@@ -1,4 +1,4 @@
-#include"Flower.h"
+#include"Coin.h"
 
 Flower::Flower(GameDataRef data) : _data(data)
 {

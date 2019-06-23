@@ -6,7 +6,7 @@
 #include "Brick.h"
 #include "Border.h"
 #include "Bee.h"
-#include "Flower.h"
+#include "Coin.h"
 #include "Collision.h"
 
 #include "Hud.h"

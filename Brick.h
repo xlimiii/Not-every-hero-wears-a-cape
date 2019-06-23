@@ -3,7 +3,7 @@
 #include "Game.h"
 #include<vector>
 #include "Definitions.h"
-#include "Flower.h"
+#include "Coin.h"
 
 	class Brick {
 	public:
