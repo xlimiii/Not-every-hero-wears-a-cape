@@ -5,8 +5,8 @@
 #include <vector>
 	class Bee {
 	public:
-		Bee(GameDataRef data);
-		void DrawBee();
+		Bee(GameDataRef data); //konstruktor
+   		void DrawBee();  //
 		void Animate(float dt);
 		void Fly();
 		const sf::Sprite &getSprite() const;

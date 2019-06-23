@@ -1,4 +1,5 @@
 #include"Bee.h"
+
 Bee::Bee(GameDataRef data) : _data(data)
 {
 	_animationIterator = 0;
@@ -35,11 +36,11 @@ void Bee::Fly()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && this->top() > 0) //T
 	{
-		_beeSprite.move(0, -2);
+		_beeSprite.move(0, -3);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && this->bottom() < 490) //tutaj trzeba aktualizowaæ wysokoœæ ekranu T
 	{
-		_beeSprite.move(0, 2);
+		_beeSprite.move(0, 3);
 	}
 }
 

@@ -122,8 +122,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="BeeState.cpp" />
+    <ClCompile Include="Final.cpp" />
+    <ClCompile Include="Flower.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="Hud.cpp" />
     <ClCompile Include="Pictures.cpp" />
     <ClCompile Include="Bee.cpp" />
     <ClCompile Include="Border.cpp" />
@@ -138,8 +141,11 @@
     <ClCompile Include="StateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Coin.h" />
+    <ClInclude Include="BeeState.h" />
+    <ClInclude Include="Final.h" />
+    <ClInclude Include="Flower.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="Hud.h" />
     <ClInclude Include="Pictures.h" />
     <ClInclude Include="Bee.h" />
     <ClInclude Include="Border.h" />

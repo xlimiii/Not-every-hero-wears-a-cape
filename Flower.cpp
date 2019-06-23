@@ -1,10 +1,12 @@
-#include"Coin.h"
+#include"Flower.h"
 
 Flower::Flower(GameDataRef data) : _data(data)
 {
 		_borderHeight = _data->pictures.GetTexture("Border").getSize().y;
 		_flowerHeight = _data->pictures.GetTexture("Flower").getSize().y;
 		_flowerYCoordinate = 0;
+		_data->pictures.LoadTexture("Flower", FLOWER_FILEPATH);
+		_flowerSprite.setTexture(this->_data->pictures.GetTexture("Flower"));
 }
 
 void Flower::CreateFlower()
@@ -23,7 +25,7 @@ void Flower::MoveFlower(float dt)
 		flowerSprites.at(i).move(-motion, 0);
 	}
 }
-void Flower::DrawFlower()
+void Flower::DrawFlower( )
 {
 	for (int i = 0; i < flowerSprites.size(); i++)
 	{
@@ -49,3 +51,8 @@ bool Flower::DoIntersect(int y1, int y2)
 	return flowerSprites;
 
 }
+
+ sf::Sprite Flower::getSprite()
+ {
+	 return _flowerSprite;
+ }

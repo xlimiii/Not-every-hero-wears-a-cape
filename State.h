@@ -7,4 +7,4 @@ public:
 		virtual void Draw(float dt) {};
 		virtual void Pause() {};
 		virtual void Resume() {};
-	};
+};

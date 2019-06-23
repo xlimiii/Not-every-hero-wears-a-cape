@@ -7,18 +7,18 @@
 #define WELCOME_BACKGROUND_FILEPATH "Pictures/background_1.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Pictures/backg.png"
 #define GAME_BACKGROUND_FILEPATH "Pictures/backg.png"
-#define GAME_OVER_BACKGROUND_FILEPATH "Pictures/game-over-body.png"
+#define GAME_OVER_BACKGROUND_FILEPATH "Pictures/game-over-background.png"
 #define GAME_TITLE_FILEPATH "Pictures/title.png"
 #define PLAY_BUTTON_FILEPATH "Pictures/playbutton.png"
 #define BRICK_FILEPATH "Pictures/brick.png"
 #define BEE_1_FILEPATH "Pictures/bee.png"
 #define BEE_2_FILEPATH "Pictures/bee_01.png"
 #define BEE_3_FILEPATH "Pictures/bee_02.png"
-#define BRICK_MOVEMENT_SPEED 350.0f
-#define ZERO_SPEED 0.0f
-#define BRICK_CREATION_FREQUENCY 0.8f
-#define FLOWER_CREATION_FREQUENCY 0.4f
+#define BRICK_MOVEMENT_SPEED 280.0f
+#define BRICK_CREATION_FREQUENCY 2.0f
 #define BORDER_FILEPATH "Pictures/border.png"
 #define BEE_ANIMATION_DURATION 0.5f
 #define FLOWER_FILEPATH "Pictures/flower.png"
-enum GameStates {Before, Playing, GameOver};
+#define SCORE_FONT "Pictures/arial.ttf"
+#define PROTECTING_BEES_FILEPATH "Pictures/learning.png"
+
